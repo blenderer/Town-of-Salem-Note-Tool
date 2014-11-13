@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Town of Salem Tool</title>
+    <style type="text/css">
+    ul {
+        list-style-type: none;
+    }
+    ul li {
+        cursor: pointer;
+        clear: both;
+        height: 40px;
+    }
+
+    ul li span {
+        float: left;
+        width: 100px;
+    }
+
+    ul li input {
+        float: left;
+        width: 453px;
+    }
+    button {
+        float: left;
+        clear: both;
+    }
+    </style>
+</head>
+<body>
+<ul>
+    <li><span>Sheriff </span><input type="text"></li>
+    <li><span>Doc </span><input type="text"></li>
+    <li><span>Investigator </span><input type="text"></li>
+    <li><span>Jailor </span><input type="text"></li>
+    <li><span>Medium </span><input type="text"></li>
+    <li><span>God Father </span><input type="text"></li>
+    <li><span>Framer </span><input type="text"></li>
+    <li><span>Executioner </span><input type="text"></li>
+    <li><span>Escort </span><input type="text"></li>
+    <li><span>Mafioso </span><input type="text"></li>
+    <li><span>Lookout </span><input type="text"></li>
+    <li><span>Serial Killer </span><input type="text"></li>
+    <li><span>Jester </span><input type="text"></li>
+    <li><span>Town Killer </span><input type="text"></li>
+    <li><span>Random Town </span><input type="text"></li>
+</ul>
+<button>Reset</button>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("ul li span").attr('data-checked', 'false');
+
+        $("ul li span").click(function(e) {
+            if ($(this).attr('data-checked') == 'false') {
+                $(this)
+                .css('text-decoration', 'line-through')
+                .attr('data-checked', 'true');
+            }
+            else {
+                $(this)
+                .css('text-decoration', 'none')
+                .attr('data-checked', 'false');
+            }
+        });
+
+        $("button").click(function(e){
+            $("ul li span")
+            .css('text-decoration', 'none')
+            .attr('data-checked', 'false');
+
+            $("input").val("");
+        });
+    });
+</script>
+
+</body>
+</html>
